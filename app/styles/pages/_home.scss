@@ -1,0 +1,44 @@
+.meeting-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  .empty-container {
+    background: $color-popup;
+
+    opacity: 0.6;
+    width: 50%;
+  }
+  section {
+    width: 50%;
+    height: 100%;
+  }
+
+  .schedule-container {
+    background: $color-modal;
+    z-index: 100;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .empty-container {
+    width: 40% !important;
+  }
+  .schedule-container {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .empty-container {
+    width: 0 !important;
+  }
+
+  .schedule-container {
+    margin: 20px;
+    width: 100% !important;
+  }
+}

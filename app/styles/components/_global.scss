@@ -1,0 +1,47 @@
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.flex-row {
+  @include flex(row);
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  @include flex(column);
+}
+
+.fg {
+  flex-grow: 1;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.center-y {
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.mx-sm {
+  margin: 0 5px;
+}
+
+%bd {
+  border: 1px solid $color-divider;
+}
+
+.mt8 {
+  margin-top: 8px;
+}

@@ -1,0 +1,1 @@
+export default Ember.HTMLBars.template({"id":"TlYTfLi6","block":"{\"statements\":[[1,[26,[\"outlet\"]],false]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}","meta":{"moduleName":"task/templates/application.hbs"}});

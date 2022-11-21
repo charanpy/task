@@ -1,0 +1,324 @@
+.input {
+  height: 36px;
+  width: 100%;
+  font-size: 14px;
+  color: $color-black-tertiary !important;
+  padding: 0px 12px;
+  background: $color-modal;
+  border: 1px solid $color-divider;
+  border-radius: 4px;
+}
+
+.form-container {
+  padding-bottom: 30px;
+  overflow: auto;
+}
+
+.checkbox {
+  border-radius: 4px;
+  border: 1px solid $color-divider;
+  width: 16px;
+  height: 16px;
+  position: relative;
+
+  .check {
+    transform: scale(0);
+    transition: all 500ms;
+  }
+  input[type="checkbox"]:checked {
+    font-size: 22px;
+  }
+
+  input[type="checkbox"]:checked + .check {
+    transform: scale(1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-blue;
+    color: white;
+    font-size: 11px;
+    font-weight: 400;
+    border-radius: 4px;
+  }
+}
+
+.repeat {
+  font-size: 14px;
+  margin-left: 7px;
+  color: $color-secondary;
+}
+
+.date-container {
+  padding-right: 12px;
+  margin-top: 50px !important;
+
+  .date-type {
+    font-size: 14px;
+    color: $color-secondary;
+    border-bottom: 1px dotted $color-secondary;
+    margin: 15px 0;
+    width: fit-content;
+  }
+
+  .meeting-interval {
+    display: none;
+  }
+  .repeat {
+    font-size: 14px;
+    margin-left: 7px;
+    color: $color-secondary;
+  }
+}
+
+.meeting-input {
+  margin-top: 30px;
+
+  .date-text {
+    margin: 0 10px;
+    color: $color-secondary;
+  }
+
+  .calender-input {
+    max-width: 50%;
+    color: $color-secondary;
+
+    .input {
+      padding-right: 0;
+    }
+    .calender-icon {
+      margin-left: 5px;
+      padding: 0 9px;
+      border-left: 1px solid $color-divider;
+      position: relative;
+      cursor: pointer;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        z-index: 12;
+        cursor: pointer;
+      }
+      svg {
+        fill: $color-secondary;
+      }
+    }
+  }
+  .input-container {
+    max-width: 75%;
+    flex-grow: 1;
+  }
+  &_name {
+    font-weight: bold;
+    font-size: 14px;
+    width: 22%;
+    color: $color-black-tertiary;
+
+    span {
+      position: relative;
+    }
+    .impt::after {
+      content: "*";
+      position: absolute;
+      color: #db2729;
+      right: -10px;
+    }
+  }
+}
+
+%inactive-check {
+  color: $color-black-light;
+  fill: $color-black-light;
+}
+
+%active-check {
+  color: white;
+  fill: white;
+}
+
+.meeting-type-item-wrapper {
+  .info {
+    font-size: 12px;
+    fill: $color-black-light;
+    margin: 0 12px;
+  }
+
+  .hosts {
+    margin-top: 30px;
+
+    .host {
+      margin-right: 20px;
+
+      .circle {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 6px;
+        background-color: #c6c6c6;
+      }
+      .text {
+        font-size: 14px;
+        color: $color-blue;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          border-bottom: 1px dotted $color-blue;
+        }
+      }
+    }
+  }
+  .meeting-type-item-container {
+    border-radius: 30px;
+    padding: 4px;
+    background-color: #f1f4f7;
+    .meeting-audio,
+    .meeting-video {
+      z-index: 10;
+      cursor: pointer;
+    }
+    .meeting-audio {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color-blue;
+        width: 100%;
+        height: 100%;
+        transition: all 200ms linear;
+        border-radius: 30px;
+        z-index: -1;
+      }
+    }
+
+    .meeting-type-item {
+      width: 110px;
+      border-radius: 30px;
+      padding: 7px 10px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    #meeting-type:checked + .meeting-audio,
+    #meeting-type:not(:checked) ~ .meeting-video {
+      @extend %active-check;
+    }
+
+    #meeting-type:not(:checked) + .meeting-audio,
+    #meeting-type:checked ~ .meeting-video {
+      @extend %inactive-check;
+    }
+
+    #meeting-type:not(:checked) + .meeting-audio::before {
+      left: 110px;
+    }
+  }
+}
+
+.assign {
+  .text {
+    font-size: 14px;
+    color: $color-black-light;
+  }
+  .active {
+    color: $color-blue;
+  }
+  .part,
+  .conv {
+    padding: 13px 20px 5px;
+    z-index: 16;
+  }
+
+  .part {
+    position: relative;
+    background: white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      z-index: 13;
+      height: 100%;
+      background-color: $color-divider;
+      left: -1.5px;
+      top: 8px;
+      border-radius: 30px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -10px;
+      bottom: -1px;
+      right: 0;
+      z-index: 11;
+      width: calc(100% + 10px);
+      height: 100%;
+      border: 2px solid $color-divider;
+      border-left: none;
+      border-bottom: 1px solid white;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      transition: all 0.2s ease;
+      transform: perspective(5px) rotateX(2deg);
+      transform-origin: bottom;
+    }
+  }
+
+  .invite {
+    background-color: $color-modal;
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+
+    input {
+      &::placeholder {
+        color: $color-black-light;
+      }
+    }
+  }
+}
+
+.action {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 50px;
+  width: 100%;
+  left: 0;
+
+  label,
+  svg {
+    color: $color-blue;
+    fill: $color-blue;
+  }
+
+  .btn {
+    position: relative;
+    height: 40px;
+    min-width: 90px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    border: 1px solid $color-divider;
+    font-size: 15px;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black-light;
+    margin-right: 10px;
+  }
+  .active {
+    background: $color-blue;
+    color: white;
+    margin-right: 0;
+  }
+}

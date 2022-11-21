@@ -1,0 +1,392 @@
+.meeting-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+  .meeting-container .empty-container {
+    background: #000;
+    opacity: 0.6;
+    width: 50%; }
+  .meeting-container section {
+    width: 50%;
+    height: 100%; }
+  .meeting-container .schedule-container {
+    background: #fff;
+    z-index: 100;
+    border-radius: 5px; }
+
+@media (max-width: 900px) {
+  .empty-container {
+    width: 40% !important; }
+  .schedule-container {
+    width: 60% !important; } }
+
+@media (max-width: 768px) {
+  .empty-container {
+    width: 0 !important; }
+  .schedule-container {
+    margin: 20px;
+    width: 100% !important; } }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.flex-col {
+  display: flex;
+  flex-direction: column; }
+
+.fg {
+  flex-grow: 1; }
+
+.flex-center {
+  justify-content: center;
+  align-items: center; }
+
+.center {
+  justify-content: center;
+  align-items: center; }
+
+.center-y {
+  align-items: center; }
+
+.flex-between {
+  justify-content: space-between; }
+
+.mx-sm {
+  margin: 0 5px; }
+
+.meeting-header .header-right, .meeting-type-container .meeting-type .meeting-type-box {
+  border: 1px solid #e6e6e6; }
+
+.mt8 {
+  margin-top: 8px; }
+
+.meeting-header {
+  padding: 18px 36px 2px; }
+  .meeting-header .header-left {
+    padding-bottom: 10px;
+    position: relative; }
+    .meeting-header .header-left span {
+      font-size: 18px;
+      font-weight: bold; }
+    .meeting-header .header-left .header-text {
+      color: #666; }
+    .meeting-header .header-left .header-subtext {
+      color: #000; }
+    .meeting-header .header-left::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 20px;
+      border-bottom: 2px solid #339dff; }
+  .meeting-header .header-right {
+    width: 250px;
+    height: 36px;
+    font-size: 14px;
+    border-radius: 4px; }
+    .meeting-header .header-right .box-wrap {
+      width: 26px;
+      height: 100%;
+      background: #f7f7f7;
+      margin-right: 6px; }
+      .meeting-header .header-right .box-wrap .box {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        background: #8cbf40; }
+    .meeting-header .header-right .user-wrap .user {
+      color: #666; }
+
+.schedule-body {
+  padding: 20px 36px; }
+
+.meeting-type-container {
+  padding: 13px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #f7f7f7; }
+  .meeting-type-container .meeting-description {
+    color: #666;
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 400; }
+  .meeting-type-container .meeting-type .meeting-online {
+    border: 2px solid #339dff; }
+  .meeting-type-container .meeting-type .meeting-type-box {
+    margin: 0 15px;
+    padding: 13px 20px;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 4px;
+    transition: all 200ms linear;
+    cursor: pointer; }
+    .meeting-type-container .meeting-type .meeting-type-box svg {
+      fill: #5a5a5a;
+      margin-right: 8px; }
+    .meeting-type-container .meeting-type .meeting-type-box span {
+      color: #5a5a5a;
+      font-size: 15px; }
+    .meeting-type-container .meeting-type .meeting-type-box:hover {
+      border: 1px solid #339dff; }
+
+.input {
+  height: 36px;
+  width: 100%;
+  font-size: 14px;
+  color: #222222 !important;
+  padding: 0px 12px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px; }
+
+.form-container {
+  padding-bottom: 30px;
+  overflow: auto; }
+
+.checkbox {
+  border-radius: 4px;
+  border: 1px solid #e6e6e6;
+  width: 16px;
+  height: 16px;
+  position: relative; }
+  .checkbox .check {
+    transform: scale(0);
+    transition: all 500ms; }
+  .checkbox input[type="checkbox"]:checked {
+    font-size: 22px; }
+  .checkbox input[type="checkbox"]:checked + .check {
+    transform: scale(1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #339dff;
+    color: white;
+    font-size: 11px;
+    font-weight: 400;
+    border-radius: 4px; }
+
+.repeat {
+  font-size: 14px;
+  margin-left: 7px;
+  color: #666; }
+
+.date-container {
+  padding-right: 12px;
+  margin-top: 50px !important; }
+  .date-container .date-type {
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px dotted #666;
+    margin: 15px 0;
+    width: fit-content; }
+  .date-container .meeting-interval {
+    display: none; }
+  .date-container .repeat {
+    font-size: 14px;
+    margin-left: 7px;
+    color: #666; }
+
+.meeting-input {
+  margin-top: 30px; }
+  .meeting-input .date-text {
+    margin: 0 10px;
+    color: #666; }
+  .meeting-input .calender-input {
+    max-width: 50%;
+    color: #666; }
+    .meeting-input .calender-input .input {
+      padding-right: 0; }
+    .meeting-input .calender-input .calender-icon {
+      margin-left: 5px;
+      padding: 0 9px;
+      border-left: 1px solid #e6e6e6;
+      position: relative;
+      cursor: pointer; }
+      .meeting-input .calender-input .calender-icon input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        z-index: 12;
+        cursor: pointer; }
+      .meeting-input .calender-input .calender-icon svg {
+        fill: #666; }
+  .meeting-input .input-container {
+    max-width: 75%;
+    flex-grow: 1; }
+  .meeting-input_name {
+    font-weight: bold;
+    font-size: 14px;
+    width: 22%;
+    color: #222222; }
+    .meeting-input_name span {
+      position: relative; }
+    .meeting-input_name .impt::after {
+      content: "*";
+      position: absolute;
+      color: #db2729;
+      right: -10px; }
+
+.meeting-type-item-wrapper .meeting-type-item-container #meeting-type:not(:checked) + .meeting-audio,
+.meeting-type-item-wrapper .meeting-type-item-container #meeting-type:checked ~ .meeting-video {
+  color: #666;
+  fill: #666; }
+
+.meeting-type-item-wrapper .meeting-type-item-container #meeting-type:checked + .meeting-audio,
+.meeting-type-item-wrapper .meeting-type-item-container #meeting-type:not(:checked) ~ .meeting-video {
+  color: white;
+  fill: white; }
+
+.meeting-type-item-wrapper .info {
+  font-size: 12px;
+  fill: #666;
+  margin: 0 12px; }
+
+.meeting-type-item-wrapper .hosts {
+  margin-top: 30px; }
+  .meeting-type-item-wrapper .hosts .host {
+    margin-right: 20px; }
+    .meeting-type-item-wrapper .hosts .host .circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+      background-color: #c6c6c6; }
+    .meeting-type-item-wrapper .hosts .host .text {
+      font-size: 14px;
+      color: #339dff;
+      font-weight: 500;
+      cursor: pointer; }
+      .meeting-type-item-wrapper .hosts .host .text:hover {
+        border-bottom: 1px dotted #339dff; }
+
+.meeting-type-item-wrapper .meeting-type-item-container {
+  border-radius: 30px;
+  padding: 4px;
+  background-color: #f1f4f7; }
+  .meeting-type-item-wrapper .meeting-type-item-container .meeting-audio,
+  .meeting-type-item-wrapper .meeting-type-item-container .meeting-video {
+    z-index: 10;
+    cursor: pointer; }
+  .meeting-type-item-wrapper .meeting-type-item-container .meeting-audio {
+    position: relative; }
+    .meeting-type-item-wrapper .meeting-type-item-container .meeting-audio::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #339dff;
+      width: 100%;
+      height: 100%;
+      transition: all 200ms linear;
+      border-radius: 30px;
+      z-index: -1; }
+  .meeting-type-item-wrapper .meeting-type-item-container .meeting-type-item {
+    width: 110px;
+    border-radius: 30px;
+    padding: 7px 10px;
+    font-size: 14px;
+    color: #888; }
+  .meeting-type-item-wrapper .meeting-type-item-container #meeting-type:not(:checked) + .meeting-audio::before {
+    left: 110px; }
+
+.assign .text {
+  font-size: 14px;
+  color: #666; }
+
+.assign .active {
+  color: #339dff; }
+
+.assign .part,
+.assign .conv {
+  padding: 13px 20px 5px;
+  z-index: 16; }
+
+.assign .part {
+  position: relative;
+  background: white; }
+  .assign .part::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    z-index: 13;
+    height: 100%;
+    background-color: #e6e6e6;
+    left: -1.5px;
+    top: 8px;
+    border-radius: 30px; }
+  .assign .part::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    bottom: -1px;
+    right: 0;
+    z-index: 11;
+    width: calc(100% + 10px);
+    height: 100%;
+    border: 2px solid #e6e6e6;
+    border-left: none;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: all 0.2s ease;
+    transform: perspective(5px) rotateX(2deg);
+    transform-origin: bottom; }
+
+.assign .invite {
+  background-color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); }
+  .assign .invite input::placeholder {
+    color: #666; }
+
+.action {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 50px;
+  width: 100%;
+  left: 0; }
+  .action label,
+  .action svg {
+    color: #339dff;
+    fill: #339dff; }
+  .action .btn {
+    position: relative;
+    height: 40px;
+    min-width: 90px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    margin-right: 10px; }
+  .action .active {
+    background: #339dff;
+    color: white;
+    margin-right: 0; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", verdana, arial, sans-serif !important; }
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20; }
+
+/*# sourceMappingURL=task.css.map */
